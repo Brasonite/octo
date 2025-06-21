@@ -1,0 +1,16 @@
+# Octo's question preset
+
+title = "Question title"
+time_limit = 1.0
+
+solver = "solver.py"
+
+# Folders
+# Comment the line below to set to the parent directory of this file
+root = "/"
+input_folders = ["1"]
+output_folders = ["1"]
+
+# File extensions
+input_format = "in"
+output_format = "sol"

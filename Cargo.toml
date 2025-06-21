@@ -1,0 +1,16 @@
+[package]
+name = "octo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+clap = "4.5.40"
+clap_derive = "4.5.40"
+deunicode = "1.6.2"
+fern = "0.7.1"
+log = "0.4.27"
+rayon = "1.10.0"
+serde = { version = "1.0.219", features = ["derive"] }
+toml = "0.8.23"
+walkdir = "2.5.0"
