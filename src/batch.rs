@@ -56,7 +56,9 @@ impl Batch {
                         continue;
                     }
                 };
-                let data = deunicode(std::fs::read_to_string(entry.path())?.trim());
+
+                let data =
+                    deunicode(std::fs::read_to_string(entry.path())?.trim()).replace("\r\n", "\n");
                 map.insert(format!("{root}-{filename}"), data);
             }
         }
@@ -129,7 +131,8 @@ impl Batch {
                     if time > question.time_limit {
                         TestResult::Failure(FailureReason::Timeout)
                     } else {
-                        let results = deunicode(String::from_utf8_lossy(&output.stdout).trim());
+                        let results = deunicode(String::from_utf8_lossy(&output.stdout).trim())
+                            .replace("\r\n", "\n");
 
                         if results.trim() == self.outputs[key] {
                             TestResult::Success
