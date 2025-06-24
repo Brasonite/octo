@@ -26,6 +26,7 @@ impl Question {
         if question.root.is_none() {
             question.root = Some(
                 Path::new(path)
+                    .canonicalize()?
                     .parent()
                     .expect("Failed to get the question's parent folder")
                     .to_string_lossy()
